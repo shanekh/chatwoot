@@ -38,14 +38,14 @@ services:
     image: pgvector/pgvector:pg16
     restart: always
     ports:
-      - '172.17.0.1:7221:5432'
+      - '172.17.0.1:5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=chatwoot_production
+      - POSTGRES_DB=chatwoot
       - POSTGRES_USER=postgres
       # Please provide your own password.
-      - POSTGRES_PASSWORD=5VVq25ftWhZ6Uclp
+      - POSTGRES_PASSWORD=
 
   redis:
     image: redis:alpine
